@@ -12,7 +12,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class LoginService {
 
 
-  BASE_URL = "http://localhost:8080/login";
+  BASE_URL = "http://localhost:8082/login";
 httpOptions = {
 headers: new HttpHeaders({
 'Content-Type': 'application/json'

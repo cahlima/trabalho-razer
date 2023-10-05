@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class UsuarioService {
 
 
-  BASE_URL : string = environment.BASE_URL + "usuarios/";
+  BASE_URL : string = environment.BASE_URL = "http://localhost:4200/usuarios/";
 httpOptions = {
 headers: new HttpHeaders({
 'Content-Type': 'application/json'
