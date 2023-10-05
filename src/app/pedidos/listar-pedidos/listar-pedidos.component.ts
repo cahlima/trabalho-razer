@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidosService } from '../service/pedidos.service';
 import { Pedidos } from 'src/app/shared/models/pedidos.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalPedidoComponent } from '../modal-pedido/modal-pedido.component';
 
 @Component({
   selector: 'app-listar-pedidos',
@@ -12,7 +14,10 @@ export class ListarPedidosComponent implements OnInit {
   pedidos: Pedidos[] = [];
 
 
-  constructor(private pedidosService: PedidosService){}
+  constructor(private pedidosService: PedidosService,
+  private modalService: NgbModal) { }
+  
+
 
   ngOnInit(): void {
     this.pedidos = this.listarTodos();
@@ -29,4 +34,10 @@ export class ListarPedidosComponent implements OnInit {
       this.pedidos = this.listarTodos();
     }
   }
-}
+
+  abrirModalPedidos (pedido: Pedidos) {
+      const modalRef = this.modalService.open(ModalPedidoComponent);
+      modalRef.componentInstance.pedido = pedido;
+      }
+  
+    }

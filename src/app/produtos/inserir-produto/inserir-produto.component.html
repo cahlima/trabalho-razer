@@ -3,29 +3,58 @@
 
  <form #formProduto="ngForm">
  <div class="form-group">
- <label for="descricao">Descrição:</label>
- <input type="text" class="form-control" id="descricao" name="descricao"
-    [(ngModel)]="produto.descricao"
-    #descricao="ngModel"
- minlength="2" required>
- <div *ngIf="descricao.errors && (descricao.dirty || descricao.touched)" class="alert alert-danger">
- <div [hidden]="!descricao.errors['required']"> Digite a descrição do produto. </div>
- <div [hidden]="!descricao.errors['minlength']"> O produto deve conter ao menos 2 caracteres. </div>
- </div>
- </div>
+
+   <label for="descricao">Item:</label>
+   <input type="text" class="form-control" id="Item" name="item"
+      [(ngModel)]="produto.itens"
+      #descricao="ngModel"
+   minlength="2" required>
+   <div *ngIf="descricao.errors && (descricao.dirty || descricao.touched)" class="alert alert-danger">
+   <div [hidden]="!descricao.errors['required']"> Digite o nome do produto. </div>
+   <div [hidden]="!descricao.errors['minlength']"> O produto deve conter ao menos 2 caracteres. </div>
+   </div>
+
+   <div class="form-group">
+
+      <label for="descricao">Descrição:</label>
+      <input type="text" class="form-control" id="descricao" name="descricao"
+         [(ngModel)]="produto.descricao"
+         #descricao="ngModel"
+      minlength="2" required>
+      <div *ngIf="descricao.errors && (descricao.dirty || descricao.touched)" class="alert alert-danger">
+      <div [hidden]="!descricao.errors['required']"> Digite a descrição do produto. </div>
+      <div [hidden]="!descricao.errors['minlength']"> O produto deve conter ao menos 2 caracteres. </div>
+      </div>
+
+      <div class="form-group">
+
+         <label for="descricao">Quantidade:</label>
+         <input type="number" class="form-control" id="quantidade" name="quantidade"
+            [(ngModel)]="produto.quantidade"
+            #descricao="ngModel"
+         minlength="1" required>
+         <div *ngIf="descricao.errors && (descricao.dirty || descricao.touched)" class="alert alert-danger">
+         <div [hidden]="!descricao.errors['required']"> Digite a quantidade. </div>
+         <div [hidden]="!descricao.errors['minlength']"> A quantidade deve conter ao menos 1 caracteres. </div>
+         </div>
+
+       </div>
+
 
     <div class="form-group">
-    <button type="button" class="btn btn-primary"
-        (click)="inserir()"
-        [disabled]="!formProduto.form.valid">
+         <button type="button" class="btn btn-primary"
+            (click)="inserir()"
+            [disabled]="!formProduto.form.valid">
 
-    <i class="fa fa-save" aria-hidden="true"></i> Salvar
-    </button>
+         <i class="fa fa-save" aria-hidden="true"></i> Salvar
+         </button>
+
     <a class="btn btn-secondary"  [routerLink]="['/produtos']">
 
     <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
     </a>
+    
     </div>
-    </form>
+   
    </div>
    

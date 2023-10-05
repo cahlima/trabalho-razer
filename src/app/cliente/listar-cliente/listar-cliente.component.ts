@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ClienteService } from '../service/cliente.service';
 import { Cliente } from 'src/app/shared/models/cliente.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalClienteComponent } from '../modal-cliente/modal-cliente.component';
 
 @Component({
   selector: 'app-listar-cliente',
@@ -11,7 +13,9 @@ export class ListarClienteComponent implements OnInit {
 
   clientes: Cliente[] = []; 
 
-  constructor(private clienteService: ClienteService,){  }
+  constructor(private clienteService: ClienteService,
+
+  private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.clientes = this.listarTodos();
@@ -29,4 +33,11 @@ export class ListarClienteComponent implements OnInit {
     }
   }
 
-}
+
+abrirModalClientes (Cliente: Cliente) {
+    const modalRef = this.modalService.open(ModalClienteComponent);
+    modalRef.componentInstance.cliente = Cliente;
+    }
+
+  }
+

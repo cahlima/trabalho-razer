@@ -19,6 +19,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioModule } from './usuario/usuario.module';
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { HttpClient } from '@angular/common/http';
+import { ModalPedidoComponent } from './pedidos/modal-pedido/modal-pedido.component';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -29,6 +33,7 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
     AppComponent,
     HomeComponent,
     
+    
   ],
 
   imports: [ 
@@ -36,7 +41,7 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
     BrowserModule,
     AppRoutingModule,
     ClienteModule,
-    PedidosModule,
+    CommonModule,
     ProdutosModule,
     NgbModule, 
     FormsModule,

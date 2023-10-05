@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 import { NgxMaskPipe, IConfig } from 'ngx-mask';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from '../shared';
+import { ModalPedidoComponent } from './modal-pedido/modal-pedido.component';
 
 
 
@@ -23,6 +24,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ListarPedidosComponent,
     InserirPedidoComponent,
     EditarPedidoComponent,
+
   
     
     
